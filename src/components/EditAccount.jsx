@@ -142,8 +142,14 @@ class EditAccount extends Component {
   }
 }
 
-const mapDispatchToProps = {
-  editAccount: editAccount
-}
+const mapStateToProps = (state, ownProps) => ({
+  account: state.accounts.find(
+    (account) => account.id === ownProps.match.params.id
+  ),
+});
 
-export default connect(null, mapDispatchToProps) (EditAccount);
+const mapDispatchToProps = {
+  editAccount
+};
+
+export default connect(mapStateToProps, mapDispatchToProps) (EditAccount);
