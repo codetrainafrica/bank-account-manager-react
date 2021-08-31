@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { editAccount } from "../Actions/AccountsActions";
 
 class EditAccount extends Component {
   constructor(props) {
@@ -6,9 +8,9 @@ class EditAccount extends Component {
     this.state = {
       account_name: props.account.account_name,
       account_number: props.account.account_number,
-      account_type: props.account.account_type,
       bank_name: props.account.bank_name,
       bank_branch: props.account.bank_branch,
+      account_type: props.account.account_type,
     };
     this.id = props.match.params.id;
   }
@@ -140,4 +142,13 @@ class EditAccount extends Component {
 }
 
 
-export default EditAccount;
+const mapStateToProps = (state, ownProps) => ({
+  account: state.accounts.find(
+    (account) => account.id === ownProps.match.params.id
+  ),
+});
+
+const mapDispatchToProps={
+  editAccount: editAccount,
+}
+export default connect(mapStateToProps, mapDispatchToProps)(EditAccount);

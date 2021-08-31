@@ -10,4 +10,5 @@ const BankAccountsPage = () => {
     );
 }
 
+
 export default BankAccountsPage;
