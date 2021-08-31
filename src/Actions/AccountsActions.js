@@ -18,9 +18,11 @@ export const deleteAccount= (accountId)=>{
     }
 };
 
-export const editAccount= (updateAccount)=>{
+export const editAccount= (id, account)=>{
     return {
         type: EDIT_ACCOUNT,
-        payload: updateAccount,
+        id,
+        // payload: 
+         account,
     }
 };
