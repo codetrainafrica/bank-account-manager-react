@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {connect} from "react-redux";
+import { deleteAccount } from "../actions/accountActions";
 
 const AccountInfo = ({
   id,
@@ -56,4 +58,8 @@ const AccountInfo = ({
   );
 };
 
-export default AccountInfo;
+const mapDispatchToProps = {
+  deleteAccount
+}
+
+export default connect(null, mapDispatchToProps) (AccountInfo);
