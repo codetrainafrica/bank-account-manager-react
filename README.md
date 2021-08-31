@@ -27,3 +27,19 @@ all the CRUD functionality using react redux for shared state management.
 - Update the ReadMe to outline the steps you took to make the app work.
 - Push your work to Github.
 - Submit a pull request to the main repo: https://github.com/codetrainafrica/contact-manager-react/
+
+##steps
+- Fork the repository and clone it onto local computer.
+- Install dependencies for the project using yarn install.
+- Add a Reducer folder and in it create a AccountReducer.js file.
+- Add an Action folder and in it create an AccountsAction.js file.
+- Add a Store folder and in it create a store.js file.
+- Wrap the Router in the index.js with Provider from react-redux. With store as props from the store js file.
+- Inside the reducer create a data(state) call it initialState. 
+- And create the AccountsReducer function which returns a switch statement with cases(addAccount, deleteAccount and editAccount).
+- In the AccountsAction.js file create the action for the cases.
+- In the BankAccount component create a mapStateToProps function to read the data from the store
+- In the addAccount component create a dispatch function to write new account onto the store.
+- Create a dispatch and a mapStateToProps to be able to read and update the data in the store using id.
+- add a build command in package.json.
+- Commit is done after any change in each components or file.
