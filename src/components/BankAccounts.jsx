@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import AccountInfo from "./AccountInfo";
 
 const BankAccounts = ({ accounts, deleteAccount }) => {
@@ -27,4 +28,10 @@ const BankAccounts = ({ accounts, deleteAccount }) => {
   );
 };
 
-export default BankAccounts;
+
+const mapStateToProps = (state) => {
+  return {
+    accounts: state.accounts,
+  }
+}
+export default connect(mapStateToProps)(BankAccounts);
