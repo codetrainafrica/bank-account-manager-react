@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import {connect} from "react-redux";
+import {editAccount} from "../actions/accountActions";
+
 
 class EditAccount extends Component {
   constructor(props) {
@@ -139,5 +142,8 @@ class EditAccount extends Component {
   }
 }
 
+const mapDispatchToProps = {
+  editAccount: editAccount
+}
 
-export default EditAccount;
+export default connect(null, mapDispatchToProps) (EditAccount);
