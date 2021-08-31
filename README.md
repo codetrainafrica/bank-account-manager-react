@@ -26,6 +26,7 @@ all the CRUD functionality using react redux for shared state management.
 - Deploy your work and add the link to the ReadMe.
 - Update the ReadMe to outline the steps you took to make the app work.
 - Push your work to Github.
+ CRUD
 - Submit a pull request to the main repo: https://github.com/codetrainafrica/contact-manager-react/
 
 ##steps
@@ -43,3 +44,4 @@ all the CRUD functionality using react redux for shared state management.
 - Create a dispatch and a mapStateToProps to be able to read and update the data in the store using id.
 - add a build command in package.json.
 - Commit is done after any change in each components or file.
+
