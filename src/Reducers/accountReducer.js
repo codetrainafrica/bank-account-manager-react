@@ -23,12 +23,12 @@ const accountReducer = (state = initialState, action) => {
       });
       return { ...state, accounts: newAccounts };
 
-    case "DELETE_ACCOUNT":
-      const savedAccounts = state.accounts.filter(
-        (account) => account.id !== action.id
-      );
+      case "DELETE_ACCOUNT":
+        const savedAccounts = state.accounts.filter(
+          (account) => account.id !== action.id
+        );
 
-      return { ...state, accounts: savedAccounts };
+        return { ...state, accounts: savedAccounts };
 
     default:
       return state;
