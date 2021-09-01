@@ -12,7 +12,7 @@ const AccountInfo = ({
   bank_branch,
   deleteAccount
 }) => {
-  const removeAccount = () => {
+  const removeAccount = (e) => {
     deleteAccount(id);
   };
   return (
@@ -50,7 +50,7 @@ const AccountInfo = ({
         <Link to={`/edit-account/${id}`} className="card-footer-item">
           Edit
         </Link>
-        <a onClick={removeAccount} className="card-footer-item">
+        <a href onClick={removeAccount} className="card-footer-item">
           Delete
         </a>
       </footer>
