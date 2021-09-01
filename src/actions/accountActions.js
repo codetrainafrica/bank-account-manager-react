@@ -14,10 +14,12 @@ export const editAccount = (id, account) => {
     }
 };
 
-export const deleteAccount = (account_id) => {
+export const deleteAccount = (id) => {
     return {
         type: "DELETE_ACCOUNT",
-        account_id
+        id
     }
 }
+
+
 
