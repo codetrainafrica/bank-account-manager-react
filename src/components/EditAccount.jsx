@@ -1,17 +1,28 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { editAccount } from './../Actions/accountAction';
+
+
 
 class EditAccount extends Component {
   constructor(props) {
     super(props);
+    
+    let [newAccount] = this.props.Account.filter((account)=> account.id == this.props.id );
+
+    
     this.state = {
-      account_name: props.account.account_name,
-      account_number: props.account.account_number,
-      account_type: props.account.account_type,
-      bank_name: props.account.bank_name,
-      bank_branch: props.account.bank_branch,
+      account_name: newAccount.account_name,
+      account_number: newAccount.account_number,
+      account_type: newAccount.account_type,
+      bank_name: newAccount.bank_name,
+      bank_branch: newAccount.bank_branch,
+      id: this.props.id
     };
-    this.id = props.match.params.id;
+    
   }
+  
+
   handleChange = (e) => {
     e.preventDefault();
     this.setState({
@@ -20,7 +31,7 @@ class EditAccount extends Component {
   };
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.editAccount(this.id, this.state);
+    this.props.editAccount(this.state);
     this.setState({
       account_name: "",
       account_number: "",
@@ -139,5 +150,11 @@ class EditAccount extends Component {
   }
 }
 
+const mapDispatchToProps = { editAccount:editAccount }
+const mapStateToProps = (state) => {
+  return {
+     Account: state.accounts
+  }
+}
 
-export default EditAccount;
+export default connect(mapStateToProps,mapDispatchToProps)(EditAccount);

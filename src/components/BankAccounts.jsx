@@ -1,11 +1,13 @@
 import React from "react";
 import AccountInfo from "./AccountInfo";
+import {connect} from 'react-redux';
 
 const BankAccounts = ({ accounts, deleteAccount }) => {
+  
   const bankAccounts = accounts.map((account) => {
     return (
       <div className="column is-4" key={account.id}>
-        <AccountInfo
+        <AccountInfo 
           id={account.id}
           account_type={account.account_type}
           account_name={account.account_name}
@@ -17,6 +19,7 @@ const BankAccounts = ({ accounts, deleteAccount }) => {
       </div>
     );
   });
+
   
   return (
     <div className="container bank-accounts-container">
@@ -26,5 +29,8 @@ const BankAccounts = ({ accounts, deleteAccount }) => {
     </div>
   );
 };
+
+
+
 
 export default BankAccounts;
